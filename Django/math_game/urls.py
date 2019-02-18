@@ -16,11 +16,16 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import url, include
 from django.contrib import admin
+from.import views
 
 
 from ski_math import views
 
 urlpatterns = [
         path("", views.home, name="home"),
-        url(r'^admin/',admin.site.urls)
+        url(r'^admin/',admin.site.urls),
+        url(r'^skigame/$', views.skigame),
+        url(r'^portal/$', views.portal),
+        url(r'^stats/$', views.stats),
+        url(r'^$', views.home),
 ]   
